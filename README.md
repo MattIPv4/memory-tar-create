@@ -6,10 +6,13 @@
 </h1>
 
 <!-- Tag line -->
-<h3 align="center"></h3>
+<h3 align="center">Create gzipped tar archives in memory and download them as files or base64 strings.</h3>
 
 <!-- Badges -->
 <p align="center">
+    <a href="https://npm.com/package/memory-tar-create" target="_blank">
+        <img src="https://img.shields.io/npm/v/memory-tar-create?style=flat-square" alt="NPM Package"/>
+    </a>
     <a href="https://github.com/users/MattIPv4/sponsorship" target="_blank">
         <img src="https://img.shields.io/badge/GitHub%20Sponsors-MattIPv4-blue.svg?style=flat-square" alt="GitHub Sponsors"/>
     </a>
@@ -26,7 +29,40 @@
 <!-- Content -->
 ## Creating a Tar file in memory
 
-TODO
+```js
+import Tar from 'memory-tar-create';
+
+// Create your initial tar archive with a file
+const myTar = new Tar({
+    'test.txt': { contents: 'Hello world' },
+});
+
+// Add some more files to the archive
+myTar.add({
+    'a.txt': { contents: 'apple' },
+    'b.txt': { contents: 'banana' },
+});
+
+// Add a symlink to the archive
+myTar.add({
+    'hello.txt': { target: 'test.txt' },
+});
+
+// Remove a file from the archive
+myTar.remove('a.txt');
+
+// gzip the archive
+const gzipTar = myTar.gz();
+
+// Get the base64 of the gzipped archive
+const b64GzippedTar = gzipTar.base64();
+
+// Or, get the base64 string as a shell command for the archive
+const b64CommandGzippedTar = gzipTar.base64('myTar.tar.gz');
+
+// Or, in a browser, download the archive directly
+gzipTar.download('myTar.tar.gz');
+```
 
 <!-- Contributing -->
 ## Contributing

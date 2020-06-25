@@ -1,7 +1,7 @@
 {
     "name": "memory-tar-create",
-    "version": "0.0.1",
-    "description": "",
+    "version": "0.0.2",
+    "description": "Create gzipped tar archives in memory and download them as files or base64 strings.",
     "main": "src/index.js",
     "type": "module",
     "scripts": {
@@ -17,7 +17,7 @@
     "keywords": [
         "tar"
     ],
-    "author": "Matt (IPv4)",
+    "author": "Matt (IPv4) Cowley",
     "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/MattIPv4/memory-tar-create/issues"

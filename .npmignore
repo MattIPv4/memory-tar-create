@@ -2,4 +2,4 @@
 .github
 test
 .editorconfig
-.eslintrc.js
+.eslintrc.json
