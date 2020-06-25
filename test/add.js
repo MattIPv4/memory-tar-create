@@ -12,7 +12,7 @@ export default () => {
     arrayEqual(Object.keys(myTar.files), ['test.txt']);
     assert.equal(
         myTar.gz({ timestamp: safeDate }).base64(),
-        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8gAAhaFlbgAEAAA='
+        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8gAAhaFlbgAEAAA=',
     );
 
     myTar.add({
@@ -22,7 +22,7 @@ export default () => {
     arrayEqual(Object.keys(myTar.files), ['test.txt', 'hello.txt']);
     assert.equal(
         myTar.gz({ timestamp: safeDate }).base64(),
-        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8kAGKP5pXAAQzP8G5hj538zQaDT/0wGEAMv/zLz00YwwQgEAshOsVwAIAAA='
+        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8kAGKP5pXAAQzP8G5hj538zQaDT/0wGEAMv/zLz00YwwQgEAshOsVwAIAAA=',
     );
 
     myTar.add({
@@ -33,7 +33,7 @@ export default () => {
     arrayEqual(Object.keys(myTar.files), ['test.txt', 'hello.txt', 'a.txt', 'b.txt']);
     assert.equal(
         myTar.gz({ timestamp: safeDate }).base64(),
-        'H4sIAADhC14CA+3VUQrCMAyA4RylJ5C03ZIreAAvULGoULaxVfT4Vn2bgr60CMnfh0Bfw9fmuORNvmWoGJaY+TlL64loPVhP6Jiwe91zR94gNOiy5DAbA0LbxpRGcx3ndABNXqfH/is/AF/9I7/5J+vUf4N25f0/D0eFILRQ+/P/yX+/9k/sevXfYv/TlKIyENv+L/zTB/+s/lvsPwzlqAOp3QFs8/+vABAAAA=='
+        'H4sIAADhC14CA+3VUQrCMAyA4RylJ5C03ZIreAAvULGoULaxVfT4Vn2bgr60CMnfh0Bfw9fmuORNvmWoGJaY+TlL64loPVhP6Jiwe91zR94gNOiy5DAbA0LbxpRGcx3ndABNXqfH/is/AF/9I7/5J+vUf4N25f0/D0eFILRQ+/P/yX+/9k/sevXfYv/TlKIyENv+L/zTB/+s/lvsPwzlqAOp3QFs8/+vABAAAA==',
     );
 
     myTar.add({
@@ -44,6 +44,6 @@ export default () => {
     assert.equal(myTar.files['hello.txt'].contents, 'Replaced');
     assert.equal(
         myTar.gz({ timestamp: safeDate }).base64(),
-        'H4sIAADhC14CA+3VwQ7CIAyA4T4KT2C6sbWv4Nk3QCXxQBzZavTxRb1NE71ATNqfA4Rr84HERTZyE6gYlpj5uZfWO2LnofOEPRMOr3seyDuEBl0WCbNzoLRtTGly12lOR7D0dXrMv/ID8N0/vvkvJ/PfoF3MKRyi4VdaqP35/+Ifx7V/4n40/y3mn3OKxkBt+7/wTx/8s/lvMf9wLsscaO0OzkzlcgAQAAA='
+        'H4sIAADhC14CA+3VwQ7CIAyA4T4KT2C6sbWv4Nk3QCXxQBzZavTxRb1NE71ATNqfA4Rr84HERTZyE6gYlpj5uZfWO2LnofOEPRMOr3seyDuEBl0WCbNzoLRtTGly12lOR7D0dXrMv/ID8N0/vvkvJ/PfoF3MKRyi4VdaqP35/+Ifx7V/4n40/y3mn3OKxkBt+7/wTx/8s/lvMf9wLsscaO0OzkzlcgAQAAA=',
     );
 };

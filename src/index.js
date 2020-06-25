@@ -63,6 +63,7 @@ class TarGzData {
      * @param {String} [name] Optional, the file name for the archive download.
      */
     download(name) {
+        /* eslint-env browser */
         const blob = new Blob([ this.data ], { type: 'application/tar+gzip' });
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);

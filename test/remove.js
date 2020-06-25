@@ -12,7 +12,7 @@ export default () => {
     arrayEqual(Object.keys(myTar.files), ['test.txt']);
     assert.equal(
         myTar.gz({ timestamp: safeDate }).base64(),
-        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8gAAhaFlbgAEAAA='
+        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8gAAhaFlbgAEAAA=',
     );
 
     myTar.add({
@@ -22,7 +22,7 @@ export default () => {
     arrayEqual(Object.keys(myTar.files), ['test.txt', 'hello.txt']);
     assert.equal(
         myTar.gz({ timestamp: safeDate }).base64(),
-        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8kAGKP5pXAAQzP8G5hj538zQaDT/0wGEAMv/zLz00YwwQgEAshOsVwAIAAA='
+        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8kAGKP5pXAAQzP8G5hj538zQaDT/0wGEAMv/zLz00YwwQgEAshOsVwAIAAA=',
     );
 
     myTar.remove('hello.txt');
@@ -30,7 +30,7 @@ export default () => {
     arrayEqual(Object.keys(myTar.files), ['test.txt']);
     assert.equal(
         myTar.gz({ timestamp: safeDate }).base64(),
-        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8gAAhaFlbgAEAAA='
+        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8gAAhaFlbgAEAAA=',
     );
 
     myTar.add({
@@ -41,6 +41,6 @@ export default () => {
     assert.equal(myTar.files['hello.txt'].contents, 'Replaced');
     assert.equal(
         myTar.gz({ timestamp: safeDate }).base64(),
-        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8kAGKP5pXAAQzv8GGPkfyBrN/3QAQakFOYnJqaOZf4QCAAbHGB8ACAAA'
+        'H4sIAADhC14CAytJLS7RK6koYaAhMAACc3NzMA0E6LSBgaExg6GxmYGRuZmBCUTc3MTMWMGAgQ6gtLgksUhBgWGEAo/UnJx8hfL8opwUhlEw8kAGKP5pXAAQzv8GGPkfyBrN/3QAQakFOYnJqaOZf4QCAAbHGB8ACAAA',
     );
 };
