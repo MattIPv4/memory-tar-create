@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/MattIPv4/memory-tar-create/issues"
   },
-  "homepage": "https://github.com/MattIPv4/memory-tar-create#readme"
+  "homepage": "https://github.com/MattIPv4/memory-tar-create#readme",
+  "dependencies": {
+    "Base64": "^1.1.0",
+    "gzip-js": "^0.3.2",
+    "tarts": "^1.0.0"
+  }
 }
