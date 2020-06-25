@@ -1,21 +1,15 @@
 <!-- Source: https://github.com/MattIPv4/template/blob/master/README.md -->
 
 <!-- Title -->
-<h1 align="center" id="Template">
-    <!-- Text only -->
-    <!-- Template -->
-    <!-- or, Image logo -->
-    <img src="https://via.placeholder.com/500x60.png?text=Template" alt="Template" width="500"/>
+<h1 align="center" id="memory-tar-create">
+    memory-tar-create
 </h1>
 
 <!-- Tag line -->
-<h3 align="center">The template README (and other files) for my GitHub repositories.</h3>
+<h3 align="center"></h3>
 
 <!-- Badges -->
 <p align="center">
-    <a href="https://shields.io/" target="_blank">
-        <img src="https://img.shields.io/badge/style-flat--square-green.svg?style=flat-square" alt="Style"/>
-    </a>
     <a href="https://github.com/users/MattIPv4/sponsorship" target="_blank">
         <img src="https://img.shields.io/badge/GitHub%20Sponsors-MattIPv4-blue.svg?style=flat-square" alt="GitHub Sponsors"/>
     </a>
@@ -30,9 +24,9 @@
 ----
 
 <!-- Content -->
-## Hello
+## Creating a Tar file in memory
 
-This repository stores my template README file along with other useful default & template files for my GitHub repositories.
+TODO
 
 <!-- Contributing -->
 ## Contributing
