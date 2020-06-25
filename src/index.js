@@ -9,16 +9,23 @@ import base64 from 'Base64';
  */
 
 /**
+ * An item within the tar.
+ * @typedef TarItem
+ * @type {Object}
+ * @property {Date} [modified] The timestamp for when the file was last modified.
+ */
+
+/**
  * A file within the tar.
  * @typedef TarFile
- * @type {Object}
+ * @type {TarItem}
  * @property {String} contents The content to be included in the file, in the tar.
  */
 
 /**
  * A symlink within the tar.
  * @typedef TarLink
- * @type {Object}
+ * @type {TarItem}
  * @property {TarPath} target The target file for the symlink.
  */
 
@@ -28,6 +35,17 @@ import base64 from 'Base64';
  * @type {Object.<TarPath, (TarFile|TarLink)>}
  */
 
+/**
+ * Options for compressing the tar archive with gzip.
+ * @typedef TarGzOptions
+ * @type {Object}
+ * @property {Number} [level] gzip compression level to use.
+ * @property {Date|Number} [timestamp] timestamp to use for archive creation.
+ */
+
+/**
+ * A gzip compressed tar archive.
+ */
 class TarGzData {
     /**
      * Create a new compressed tar archive data entry.
@@ -78,6 +96,9 @@ class TarGzData {
     }
 }
 
+/**
+ * An uncompressed tar archive controller.
+ */
 class Tar {
     /**
      * Create a new tar archive.
@@ -113,34 +134,42 @@ class Tar {
     /**
      * Compress the tar archive with gzip.
      *
-     * @param {Number} [level=9] gzip compression level to use.
+     * @param {TarGzOptions} [opts] Options for compressing the tar with gzip.
      * @return {TarGzData} The resulting gzipped tar archive data.
      */
-    gz(level = 9) {
+    gz(opts) {
+        opts = opts || {};
+        if (opts.level === undefined) opts.level = 9;
+        if (opts.timestamp === undefined) opts.timestamp = new Date();
+        opts.timestamp = Math.floor(opts.timestamp.getTime() / 1000);
+
         // Convert TarFiles to data for tars, drop any invalid entries silently
         const data = Object.entries(this.files).map(([name, data]) => {
+            const obj = { name };
+
+            // Timestamp
+            if ('modified' in data) {
+                obj.mtime = Math.floor(data.modified.getTime() / 1000);
+            }
+
             // Normal file
             if ('contents' in data) {
-                return {
-                    name,
-                    content: data.contents
-                };
+                obj.content = data.contents;
+                return obj;
             }
 
             // Symlink
             if ('target' in data) {
-                return {
-                    name,
-                    typeflag: '2',
-                    linkname: data.target,
-                    content: '',
-                };
+                obj.typeflag = '2';
+                obj.linkname = data.target;
+                obj.content = '';
+                return obj;
             }
         }).filter(x => !!x);
 
         // Create the gzipped tar
         const tarData = tarts(data);
-        const gzipped = gzip.zip(tarData, { level });
+        const gzipped = gzip.zip(tarData, opts);
         return new TarGzData(Uint8Array.from(gzipped));
     }
 }
