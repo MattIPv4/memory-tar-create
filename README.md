@@ -10,7 +10,7 @@
 
 <!-- Badges -->
 <p align="center">
-    <a href="https://npm.com/package/memory-tar-create" target="_blank">
+    <a href="https://npmjs.com/package/memory-tar-create" target="_blank">
         <img src="https://img.shields.io/npm/v/memory-tar-create?style=flat-square" alt="NPM Package"/>
     </a>
     <a href="https://github.com/users/MattIPv4/sponsorship" target="_blank">
@@ -51,6 +51,11 @@ myTar.add({
 // Remove a file from the archive
 myTar.remove('a.txt');
 
+// Add a file modified at the start of 2020
+myTar.add({
+    'old.txt': { contents: 'Old?', modified: new Date(2020, 1, 1, 0, 0, 0, 0) },
+});
+
 // gzip the archive
 const gzipTar = myTar.gz();
 
@@ -63,6 +68,8 @@ const b64CommandGzippedTar = gzipTar.base64('myTar.tar.gz');
 // Or, in a browser, download the archive directly
 gzipTar.download('myTar.tar.gz');
 ```
+
+*Logic originally created for [digitalocean/nginxconfig.io](https://github.com/digitalocean/nginxconfig.io).*
 
 <!-- Contributing -->
 ## Contributing
