@@ -1,6 +1,6 @@
 {
     "name": "memory-tar-create",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Create gzipped tar archives in memory and download them as files or base64 strings.",
     "main": "src/index.js",
     "type": "module",
@@ -29,6 +29,6 @@
         "tarts": "^1.0.0"
     },
     "devDependencies": {
-        "eslint": "^7.5.0"
+        "eslint": "^7.26.0"
     }
 }
